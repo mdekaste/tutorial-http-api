@@ -1,6 +1,9 @@
 package com.example.storage
 
+import arrow.core.Either
+import arrow.core.left
 import arrow.core.raise.*
+import arrow.core.right
 import com.example.models.*
 import java.util.UUID
 
@@ -33,6 +36,80 @@ object CustomerStorage {
         val customer = getCustomers()[id]
         ensure(customer != null){ "customer bestaat niet" }
         return customer
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    fun deleteById(id: String){
+        TODO()
     }
 }
 

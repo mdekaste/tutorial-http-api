@@ -14,6 +14,8 @@ import io.ktor.server.routing.*
 val customerRepository = CustomerStorage
 val customerFactory = CustomerFactory()
 
+context(Raise<Nel<E>>)
+inline fun <A, E> raiseNel(block: Raise<E>.() -> A): A = recover(block) { raise(nonEmptyListOf(it)) }
 fun Route.getAllCustomers() {
     get("/customer") {
         effect { getCustomers() }
@@ -26,7 +28,8 @@ fun Route.getAllCustomers() {
     }
 }
 
-fun Route.findCustomerById(){
+context(Route)
+fun findCustomerById(){
     get("/customer/{id?}") {
         call.parameters["id"]?.let {
             effect {
@@ -53,5 +56,85 @@ fun Route.postCustomer() {
     }
 }
 
-context(Raise<Nel<E>>)
-inline fun <A, E> raiseNel(block: Raise<E>.() -> A): A = recover(block) { raise(nonEmptyListOf(it)) }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fun Route.deleteCustomerById(){
+    delete("/customer/{id?}"){
+        TODO()
+    }
+}
