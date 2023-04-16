@@ -12,6 +12,5 @@ fun Application.configureRouting() {
         getAllCustomers()
         postCustomer()
         findCustomerById()
-        deleteCustomerById()
     }
 }
