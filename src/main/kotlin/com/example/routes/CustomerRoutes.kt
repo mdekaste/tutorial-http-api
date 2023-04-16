@@ -53,17 +53,5 @@ fun Route.postCustomer() {
     }
 }
 
-fun Route.deleteCustomerById() {
-    delete("/customer/{id?}"){
-        effect {
-            val customer = customerRepository.deleteCustomerById(call.parameters["id"]!!)
-            customerFactory.toRequest(customer)
-        }.fold(
-            { error: String -> call.respondText(error) },
-            { customer: CustomerRequest -> call.respond(customer) }
-        )
-    }
-}
-
 context(Raise<Nel<E>>)
 inline fun <A, E> raiseNel(block: Raise<E>.() -> A): A = recover(block) { raise(nonEmptyListOf(it)) }

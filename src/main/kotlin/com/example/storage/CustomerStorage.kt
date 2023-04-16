@@ -5,7 +5,7 @@ import com.example.models.*
 import java.util.UUID
 
 object CustomerStorage {
-    private val _customers = mutableMapOf(
+    val _customers = mutableMapOf(
         UUID.randomUUID().toString() to
         Customer(
             firstName = Voornaam("michael"),
@@ -32,13 +32,6 @@ object CustomerStorage {
     fun getCustomerById(id: String): Customer {
         val customer = getCustomers()[id]
         ensure(customer != null){ "customer bestaat niet" }
-        return customer
-    }
-
-    context(Raise<String>)
-    fun deleteCustomerById(id: String): Customer {
-        val customer = _customers.remove(id)
-        ensureNotNull(customer){ "customer bestond niet tijdens deleten" }
         return customer
     }
 }
