@@ -1,0 +1,41 @@
+###
+POST http://127.0.0.1:8080/customer
+Content-Type: application/json
+
+{
+  "firstName":  "michael",
+  "lastName":  "de Kaste",
+  "email" : "m.dekaste@hotmail.com"
+}
+
+###
+POST http://127.0.0.1:8080/customer
+Content-Type: application/json
+
+{
+  "firstName":  "",
+  "lastName":  "de Oaste",
+  "email" : "m.dekastehotmail.com"
+}
+
+###
+POST http://127.0.0.1:8080/customer
+Content-Type: application/json
+
+{
+  "firstName":  "Jantje",
+  "lastName":  "van Achterwijk",
+  "email" : "jvana@topicus.nl"
+}
+
+###
+GET http://127.0.0.1:8080/customer
+Content-Type: application/json
+
+###
+GET http://127.0.0.1:8080/customer/7742fa72-5c4c-4178-b23d-c37b398e0f0b
+Content-Type: application/json
+
+###
+DELETE http://127.0.0.1:8080/customer/300b369d-2912-423b-a223-3e68257dc2ea
+Content-Type: application/json
